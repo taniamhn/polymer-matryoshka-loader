@@ -22,5 +22,8 @@
   ],
   "dependencies": {
     "polymer": "^2.0.2"
+  },
+  "devDependencies": {
+    "iron-demo-helpers": "PolymerElements/iron-demo-helpers#^2.0.0"
   }
 }

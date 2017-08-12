@@ -2,6 +2,11 @@
 
 Defines a loading flag for elements that automatically take into account the loading state of its child elements.
 
+The element implementing MatryoshkaLoaderMixin gains a few interesting Boolean properties:
+- `hostLoading` (flag to be set when your element is loading)
+- `loading` (this.hostLoading || this._areChildrenLoading())
+- `loaded` (!loading)
+
 <!---
 ```
 <custom-element-demo>
