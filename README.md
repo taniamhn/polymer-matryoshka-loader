@@ -9,6 +9,11 @@ Defines a loading flag for elements that automatically take into account the loa
     <script src="../webcomponentsjs/webcomponents-lite.js"></script>
     <link rel="import" href="demo/mixin/mixin-loader-element.html">
     <link rel="import" href="demo/mixin/non-mixin-loader-element.html">
+    <style>
+      html {
+       font-family: sans-serif; 
+      }
+    </style>
     <next-code-block></next-code-block>
   </template>
 </custom-element-demo>
@@ -18,7 +23,9 @@ Defines a loading flag for elements that automatically take into account the loa
 <mixin-loader-element countdown="2000">
   <mixin-loader-element countdown="3000">1</mixin-loader-element>
   <mixin-loader-element countdown="5000" defer>
-    <mixin-loader-element countdown="10000">1</mixin-loader-element>
+    <non-mixin-loader-element>
+      <mixin-loader-element countdown="10000">1</mixin-loader-element>
+    </non-mixin-loader-element>
   </mixin-loader-element>
 </mixin-loader-element>
 ```
