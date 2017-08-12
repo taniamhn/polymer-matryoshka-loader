@@ -29,3 +29,22 @@ Defines a loading flag for elements that automatically take into account the loa
   </mixin-loader-element>
 </mixin-loader-element>
 ```
+
+## Implementing it your own element
+
+```js
+class YourCustomElement extends MatryoshkaLoaderMixin(Polymer.Element) {
+  static get is() { return 'your-custom-element' }
+  
+  connectedCallback() {
+    super.connectedCallback();
+    
+    //Do your expensive operation
+    Polymer.Async.timeOut.run(_ => {
+      //When you're done:
+      this.hostLoading = false;
+    });
+  }
+}
+customElements.define(YourCustomElement.is, YourCustomElement)
+```

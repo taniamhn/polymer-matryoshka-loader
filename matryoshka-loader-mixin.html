@@ -71,10 +71,13 @@
         }
       }
 
+      /**
+       * @protected
+       */
       ready() {
         super.ready();
-        this.addEventListener('matryoshka-loading', e => this._onMatryoshkaLoading(e));
-        this.addEventListener('matryoshka-loaded', e => this._onMatryoshkaLoaded(e));
+        this.addEventListener('matryoshka-loading', (e) => this._onMatryoshkaLoading(e));
+        this.addEventListener('matryoshka-loaded', (e) => this._onMatryoshkaLoaded(e));
       }
 
       /**
@@ -89,10 +92,11 @@
             return;
           }
 
+          let eventOptions = {bubbles: true, composed: true, detail: {srcElement: this}};
           if (hostLoading) {
-            this.dispatchEvent(new CustomEvent('matryoshka-loading', {bubbles: true, composed: true, detail: {srcElement: this}}));
+            this.dispatchEvent(new CustomEvent('matryoshka-loading', eventOptions));
           } else {
-            this.dispatchEvent(new CustomEvent('matryoshka-loaded', {bubbles: true, composed: true, detail: {srcElement: this}}));
+            this.dispatchEvent(new CustomEvent('matryoshka-loaded', eventOptions));
           }
         })
       }
@@ -146,7 +150,7 @@
       }
 
       /**
-       * @todo connectedCallback() ?
+       * @protected
        */
       connectedCallback() {
         super.connectedCallback();
