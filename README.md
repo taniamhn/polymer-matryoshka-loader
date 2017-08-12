@@ -1,5 +1,7 @@
 # Matryoshka Loading Mixin
 
+[![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg?style=flat-square)](https://www.webcomponents.org/element/reach-digital/polymer-matryoshka-loader)
+
 Defines a loading flag for elements that automatically take into account the loading state of its child elements.
 
 The element implementing MatryoshkaLoaderMixin gains a few interesting Boolean properties:
