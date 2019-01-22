@@ -7,10 +7,10 @@
 
   <title>matryoshka-loader</title>
 
-  <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+  <script src="../../@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script>
 
-  <link rel="import" href="behavior/loader-element.html">
-  <link rel="import" href="behavior/non-loader-element.html">
+  <script type="module" src="./behavior/loader-element.js"></script>
+  <script type="module" src="./behavior/non-loader-element.js"></script>
 </head>
 <body>
 
@@ -82,8 +82,10 @@
     }
   </style>
 
-  <script>
-    document.getElementById('two').addRelatedElement(document.getElementById('one'));
-  </script>
+  <script type="module">
+import './behavior/loader-element.js';
+import './behavior/non-loader-element.js';
+document.getElementById('two').addRelatedElement(document.getElementById('one'));
+</script>
 </body>
 </html>
