@@ -6,6 +6,7 @@
     "Loading",
     "state"
   ],
+  "version": "1",
   "homepage": "https://github.com/reach-digital/polymer-matryoshka-loader",
   "name": "matryoshka-loader",
   "resolutions": {
